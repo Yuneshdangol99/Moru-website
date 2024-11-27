@@ -37,12 +37,12 @@ function App() {
           <Exclusive />
           <CashBack />
           <Rewarding />
-          <GoDigital />
-          <Testamonials />
-          <Faq />
-          <Download />
-          <Footer />
-          <Cfooter />
+          {/* <GoDigital /> */}
+          {/* <Testamonials /> */}
+          {/* <Faq /> */}
+          {/* <Download /> */}
+          {/* <Footer /> */}
+          {/* <Cfooter /> */}
         </div>
       </div>
     </>

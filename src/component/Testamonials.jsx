@@ -40,7 +40,7 @@ function Testamonials() {
             key={testimonial.id}
             className="bg-white shadow-lg rounded-lg p-6 relative w-[500px] h-[300px]"
           >
-            <div className="absolute top-4 right-4 text-[25px]">
+            <div className="absolute top-0 right-0 text-[25px] h-[60px] w-[60px] bg-[#f0f0f0] flex justify-center items-center">
               <img src={quotes} alt="" className="text-[20px]" />
             </div>
             <p className="text-gray-700 mb-6 mt-8">{testimonial.feedback}</p>

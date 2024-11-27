@@ -32,22 +32,29 @@ function BookOn() {
   ];
 
   return (
-    <div className="h-auto w-[1250px]  flex mt-8 flex-col">
-      <div>
-        <h2 className="font-bold text-[20px] font-Tondo">Book On Moru</h2>
+    <>
+      <div className="w-[90%]  sm:max-w-7xl">
+        <div>
+          <h2 className="font-bold sm:text-[20px] font-Tondo text-[15px]">
+            Book on moru
+          </h2>
+        </div>
+
+        {/* icon and text container */}
+        <div className="overflow-auto ">
+          <ul className="flex w-full">
+            {downimages.map((image, index) => (
+              <li className="flex w-full">
+                <div className="w-[160px] h-[160px] flex flex-col justify-center items-center border ">
+                  <img src={image} alt="" className="w-9" />
+                  <p>{downtext[index]}</p>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
-      <div className="flex">
-        {downimages.map((downimage, index) => (
-          <div
-            key={index}
-            className="w-[156px] h-[150px]  border  flex justify-center items-center flex-col gap-1"
-          >
-            <img src={downimage} alt="" className="w-11" />
-            <p className="font-Tondo">{downtext[index]}</p>
-          </div>
-        ))}
-      </div>
-    </div>
+    </>
   );
 }
 

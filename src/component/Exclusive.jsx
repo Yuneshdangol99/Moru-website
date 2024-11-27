@@ -2,27 +2,29 @@ import React from "react";
 import pkorganic from "../assets/pkorganic.png";
 import lumbinitek from "../assets/lumbinitek.png";
 
+const image = [pkorganic, lumbinitek];
+
+const text = ["Pk organic & wellness", "Lumbini Tekwondo Assocation"];
+
 function Exclusive() {
   return (
-    <div className="w-[1250px]">
-      <h2 className="font-bold text-[20px] font-Tondo">Exclusive Product</h2>
-      <div className="flex gap-4">
-        <div className="w-[180px] h-[180px] bg-blue-900 rounded-lg flex justify-center items-center flex-col">
-          <div className="w-[65px] h-[65px] bg-white flex justify-center items-center rounded-full overflow-hidden">
-            <img src={pkorganic} alt="" className="w-[48px] h-[48px]" />
-          </div>
-          <p className="text-white">Topup</p>
-        </div>
-        <div className="w-[180px] h-[180px] bg-blue-900 rounded-lg flex justify-center items-center flex-col">
-          <div className="w-[65px] h-[65px] bg-white flex justify-center items-center rounded-full">
-            <img
-              src={lumbinitek}
-              alt=""
-              className="w-[48px] h-[48px] overflow-hidden"
-            />
-          </div>
-          <p className="text-white">Start to tell</p>
-        </div>
+    <div className="flex flex-col w-[90%] sm:w-[1250px]">
+      <div>
+        <h2 className="font-bold sm:text-[20px] font-Tondo text-[15px]">
+          Exclusive deals
+        </h2>
+      </div>
+      <div className="overflow-auto no-scrollbar">
+        <ul className="flex gap-5">
+          {image.map((image, index) => (
+            <li className="w-[180px] h-[180px] bg-blue-900 flex flex-col items-center justify-center shrink-0 rounded-lg">
+              <div className="h-16 w-16 bg-white rounded-full flex justify-center items-center overflow-hidden">
+                <img src={image} alt="" className="w-12" />
+              </div>
+              <p className="text-white text-center">{text[index]}</p>
+            </li>
+          ))}
+        </ul>
       </div>
     </div>
   );

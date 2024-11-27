@@ -1,13 +1,9 @@
 import React from "react";
-import HeroContainer from "./HeroContainer";
-import HeroDownloads from "./HeroDownloads";
-import BookOn from "./BookOn";
-import PopularSection from "./PopularSection";
 
 function Herobackground() {
   return (
     <div className=" w-full h-64 bg-gradient-to-r from-[#c70038] to-[#c70038] flex justify-center items-center ">
-      <div className="absolute w-full">
+      <div className="absolute w-full sm:w-full">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 1440 320"

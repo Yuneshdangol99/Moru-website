@@ -2,7 +2,7 @@ import React from "react";
 
 function Bfooter() {
   return (
-    <div className="flex  justify-center items-center  mt-7 flex-col font-Tondo">
+    <div className="flex justify-center items-center  mt-7 flex-col font-Tondo">
       <div>
         <div>
           <h1 className="font-bold mb-3">Recharge & pay Bills</h1>
