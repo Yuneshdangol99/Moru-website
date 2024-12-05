@@ -1,9 +1,12 @@
 import React from "react";
 import people from "../assets/people.png";
 
-function UserButtons() {
+function UserButtons({ setshowpopup }) {
   return (
-    <div className="flex bg-[#c70038] rounded-full gap-2 border border-[#c70038] overflow-hidden">
+    <div
+      onClick={() => setshowpopup(true)}
+      className="flex bg-[#c70038] rounded-full gap-2 border border-[#c70038] overflow-hidden cursor-pointer"
+    >
       <div className="flex justify-center items-center p-2  ">
         <img src={people} className="w-6" />
       </div>

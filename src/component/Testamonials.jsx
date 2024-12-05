@@ -26,19 +26,19 @@ function Testamonials() {
   ];
   return (
     <div className=" py-12 w-full">
-      <h2 className=" font-bold text-center mb-4 text-[40px] font-Tondo">
+      <h2 className=" font-bold text-center mb-4 sm:text-[40px] font-Tondo">
         Help us make you happier
       </h2>
-      <p className="text-center text-gray-600 mb-8 font-Tondo">
+      <p className="text-center text-gray-600 mb-8 font-Tondo text-[16px] font-medium">
         We would love to hear how we can make you happier, smarter, richer,
         safer, and healthier.
       </p>
 
-      <div className="flex justify-center gap-8">
+      {/* <div className="flex justify-center gap-12">
         {testimonials.map((testimonial) => (
           <div
             key={testimonial.id}
-            className="bg-white shadow-lg rounded-lg p-6 relative w-[500px] h-[300px]"
+            className="bg-white shadow-lg rounded-lg p-6 sm:relative sm:w-[500px] sm:h-[300px] "
           >
             <div className="absolute top-0 right-0 text-[25px] h-[60px] w-[60px] bg-[#f0f0f0] flex justify-center items-center">
               <img src={quotes} alt="" className="text-[20px]" />
@@ -61,7 +61,7 @@ function Testamonials() {
             </div>
           </div>
         ))}
-      </div>
+      </div> */}
     </div>
   );
 }

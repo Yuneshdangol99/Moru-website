@@ -17,7 +17,10 @@ function Exclusive() {
       <div className="overflow-auto no-scrollbar">
         <ul className="flex gap-5">
           {image.map((image, index) => (
-            <li className="w-[180px] h-[180px] bg-blue-900 flex flex-col items-center justify-center shrink-0 rounded-lg">
+            <li
+              key={index}
+              className="w-[180px] h-[180px] bg-blue-900 flex flex-col items-center justify-center shrink-0 rounded-lg"
+            >
               <div className="h-16 w-16 bg-white rounded-full flex justify-center items-center overflow-hidden">
                 <img src={image} alt="" className="w-12" />
               </div>

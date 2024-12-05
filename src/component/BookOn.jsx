@@ -41,10 +41,10 @@ function BookOn() {
         </div>
 
         {/* icon and text container */}
-        <div className="overflow-auto ">
+        <div className="overflow-auto scrollbar-hide">
           <ul className="flex w-full">
             {downimages.map((image, index) => (
-              <li className="flex w-full">
+              <li key={index}>
                 <div className="w-[160px] h-[160px] flex flex-col justify-center items-center border ">
                   <img src={image} alt="" className="w-9" />
                   <p>{downtext[index]}</p>

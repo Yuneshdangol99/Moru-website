@@ -34,15 +34,15 @@ function HeroContainer() {
 
   return (
     <>
-      <div className="z-50 sm:hidden ">
-        <h1 className="text-white mt-5">Mobile Recharge</h1>
+      <div className="z-30 sm:hidden w-full mx-7 text-center">
+        <h1 className="text-white mt-5 text-start ml-10">Mobile Recharge</h1>
         <input
           type="text"
           placeholder="Enter Mobile number here"
-          className="w-80 h-[45px] p-[10px] rounded-lg"
+          className="w-[80%] h-[45px] p-[10px] rounded-lg"
         />
       </div>
-      <div className="sm:w-[1250px] flex justify-center flex-col rounded-xl z-50 bg-white shadow-lg h-auto sm:mt-8 w-[80%] mx-7">
+      <div className="sm:w-[1250px] flex justify-center flex-col rounded-xl z-30 bg-white shadow-lg h-auto sm:mt-8 w-[80%] mx-7">
         <div className="grid grid-cols-3 sm:flex">
           {images.map((image, index) => (
             <div
@@ -52,7 +52,7 @@ function HeroContainer() {
               } ${index === 7 ? "rounded-tr-lg" : ""}`}
             >
               <img src={image} alt="" className="w-11 h-11" />
-              <span className="mt-3 text-[12px] sm:text-[14px] font-medium">
+              <span className="mt-3 text-[12px] sm:text-[14px] font-medium text-center">
                 {herotext[index]}
               </span>
             </div>

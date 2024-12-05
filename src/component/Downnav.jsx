@@ -1,11 +1,15 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import moru from "../assets/moru.png";
 import AddMoney from "../assets/AddMoney.svg";
 import BankTransfer from "../assets/BankTransfer.svg";
 import SendMoney from "../assets/SendMoney.svg";
 import UserButtons from "./UserButtons";
+import Signinpopup from "./FunctionsContainer/Signinpopup";
+import CreateAcc from "./FunctionsContainer/CreateAcc";
 
 function Downnav() {
+  const [showpopup, setshowpopup] = useState(false);
+
   return (
     <div className="w-full px-10 pt-5 sm:px-[150px] sm:pt-5 sm:h-10">
       <div className="flex justify-between items-center">
@@ -35,16 +39,17 @@ function Downnav() {
           </div>
 
           {/* nav buttons  */}
-          <UserButtons />
+          <UserButtons setshowpopup={setshowpopup} />
         </div>
 
-        <div className="hidden sm:block">
+        <div className="sm:hidden cursor-pointer">
           <p className="text-[13px]">
             <span className="text-[#c70038]">Sign In /</span>
             Register
           </p>
         </div>
       </div>
+      {showpopup && <Signinpopup onclose={() => setshowpopup(false)} />}
     </div>
   );
 }

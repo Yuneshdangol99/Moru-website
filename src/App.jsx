@@ -17,6 +17,10 @@ import Faq from "./component/Faq";
 import Download from "./component/Download";
 import Footer from "./component/Footer";
 import Cfooter from "./component/Cfooter";
+import Signinpopup from "./component/FunctionsContainer/Signinpopup";
+import Register from "./component/FunctionsContainer/Register";
+import ResetPass from "./component/FunctionsContainer/ResetPass";
+import VerifySmS from "./component/FunctionsContainer/VerifySmS";
 
 function App() {
   return (
@@ -37,12 +41,12 @@ function App() {
           <Exclusive />
           <CashBack />
           <Rewarding />
-          {/* <GoDigital /> */}
-          {/* <Testamonials /> */}
-          {/* <Faq /> */}
-          {/* <Download /> */}
-          {/* <Footer /> */}
-          {/* <Cfooter /> */}
+          <GoDigital />
+          <Testamonials />
+          <Faq />
+          <Download />
+          <Footer />
+          <Cfooter />
         </div>
       </div>
     </>

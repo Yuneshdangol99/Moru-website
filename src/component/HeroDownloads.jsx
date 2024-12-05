@@ -5,7 +5,7 @@ import apple from "../assets/apple.png";
 
 function HeroDownloads() {
   return (
-    <div className="w-[80%] sm:w-[1250px] z-50 rounded-lg  shadow-lg h-auto p-8 ">
+    <div className="w-[80%] sm:w-[1250px] z-30 rounded-lg  shadow-lg h-auto p-8 ">
       <div className="grid grid-cols-1 gap-5 sm:flex sm:justify-between sm:items-center">
         <div>
           <h2 className="sm:text-[20px] font-bold font-Tondo text-[15px]">
@@ -25,7 +25,10 @@ function HeroDownloads() {
             <img src={send} alt="" className="text-white text-[20px]" />
           </div>
         </div>
+
+        {/* download app container */}
         <div className="flex gap-2">
+          {/* Playstore container */}
           <div className="px-4 py-1 sm:px-8 sm:py-1 bg-black text-white rounded-lg flex items-center">
             <div className="mr-3">
               <img src={playstore} alt="" />
@@ -37,6 +40,8 @@ function HeroDownloads() {
               </p>
             </div>
           </div>
+
+          {/* Applestore Container */}
           <div className="px-4 py-1 sm:px-8 sm:py-1  bg-black text-white rounded-lg flex items-center">
             <div className="mr-3">
               <img src={apple} alt="" />
