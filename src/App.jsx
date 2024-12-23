@@ -21,6 +21,7 @@ import Signinpopup from "./component/FunctionsContainer/Signinpopup";
 import Register from "./component/FunctionsContainer/Register";
 import ResetPass from "./component/FunctionsContainer/ResetPass";
 import VerifySmS from "./component/FunctionsContainer/VerifySmS";
+import Changepass from "./component/FunctionsContainer/Changepass";
 
 function App() {
   return (

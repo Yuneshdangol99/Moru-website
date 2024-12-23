@@ -3,7 +3,7 @@ import React from "react";
 function Herobackground() {
   return (
     <div className=" w-full h-64 bg-gradient-to-r from-[#c70038] to-[#c70038] flex justify-center items-center ">
-      <div className="absolute w-full sm:w-full">
+      <div className=" w-full sm:w-full mt-10">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 1440 320"

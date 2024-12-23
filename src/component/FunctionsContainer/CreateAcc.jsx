@@ -2,18 +2,23 @@ import React, { useEffect, useState } from "react";
 import moru from "../../assets/moru.png";
 import { RxCrossCircled } from "react-icons/rx";
 import Register from "./Register";
+import Signinpopup from "./Signinpopup";
 
-function CreateAcc() {
+function CreateAcc({ onclose }) {
   const [respondData, setrespondData] = useState([]);
   const [error, seterror] = useState("");
   const [phone, setphone] = useState("");
   const [isSubmitted, setisSubmitted] = useState(false);
+  const [HaveAccount, setHaveAccount] = useState(false);
 
   useEffect(() => {
     localStorage.setItem("data", JSON.stringify(respondData));
   }, [respondData]);
 
   const handleSubmit = async (e) => {
+    if (!phone) {
+      seterror("Mobile number is required");
+    }
     e.preventDefault();
     try {
       const response = await fetch(
@@ -30,15 +35,14 @@ function CreateAcc() {
         }
       );
 
-      if (!response.ok) {
-        throw new Error("User already registered.");
-      }
       const result = await response.json();
-      // result && localStorage.setItem("data", JSON.stringify(respondData));
 
-      console.log("result", result);
-      setrespondData(result);
-      setisSubmitted(true);
+      if (response.ok) {
+        setrespondData(result);
+        setisSubmitted(true);
+      } else {
+        seterror(result.validation_errors?.phone || result.error_message);
+      }
     } catch (err) {
       seterror(err.message);
       setphone("");
@@ -49,20 +53,28 @@ function CreateAcc() {
     return <Register phone={phone} />;
   }
 
+  const haveanAccount = () => {
+    setHaveAccount(true);
+  };
+
+  if (HaveAccount) {
+    return <Signinpopup />;
+  }
+
   return (
     <>
       <div>
         <div className="fixed inset-0 bg-opacity-30 backdrop-blur-sm flex justify-center items-center z-50">
-          <div className="min-h-500px mt-24 max-w-[800px] flex shadow-2xl rounded-lg relative bg-white">
-            <div className="max-w-[333px] bg-[#c70038] flex flex-col justify-center items-center py-32 px-20">
-              <div className="h-[90px] w-[90px] bg-white rounded-full flex justify-center items-center ">
-                <img src={moru} alt="" className="h-[30px] " />
+          <div className="min-h-[500px] mt-24 w-[800px] flex shadow-2xl rounded-lg relative bg-white">
+            <div className="bg-[#c70038] flex flex-col justify-center items-center w-[500px] rounded-tl-lg rounded-bl-lg">
+              <div className="h-[90px] w-[90px] bg-white rounded-full flex justify-center items-center mb-6">
+                <img src={moru} alt="" className="h-[30px]" />
               </div>
-              <div className="text-center pt-10 text-white mx-auto">
-                <h1 className="text-4xl font-Tondo font-bold mb-10">
+              <div className="text-center pt-10 text-white w-[100%]">
+                <h1 className="text-[32px] font-Tondo font-bold mb-6">
                   Hello Friend!
                 </h1>
-                <p className="text-[16px] font-medium">
+                <p className="text-[16px] font-medium px-5">
                   Enter your personal details and start journey with us
                 </p>
               </div>
@@ -100,9 +112,8 @@ function CreateAcc() {
                 </button>
               </form>
               <p className="text-right text-sm text-gray-500">
-                Already have account?
-                <a href="#" className="hover:underline">
-                  sign In
+                <a href="#" onClick={haveanAccount}>
+                  Already have account? sign In
                 </a>
               </p>
               <RxCrossCircled
